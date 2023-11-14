@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "U2TK/ZkSRoqHpoZdh7W7wQMPc9wyR4dTs1nzkis0dxwl/qPyG9dSKfGHuGCK4HLtFwO2EaQB8swEjToQR0BoNA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\shiich\\Desktop\\MyProject\\c#\\GoogleSheet\\GoogleSheet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shiich\\.nuget\\packages\\google.apis\\1.64.0\\google.apis.1.64.0.nupkg.sha512",
+    "C:\\Users\\shiich\\.nuget\\packages\\google.apis.auth\\1.64.0\\google.apis.auth.1.64.0.nupkg.sha512",
+    "C:\\Users\\shiich\\.nuget\\packages\\google.apis.core\\1.64.0\\google.apis.core.1.64.0.nupkg.sha512",
+    "C:\\Users\\shiich\\.nuget\\packages\\google.apis.sheets.v4\\1.64.0.3148\\google.apis.sheets.v4.1.64.0.3148.nupkg.sha512",
+    "C:\\Users\\shiich\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\shiich\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\shiich\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
