@@ -2,4 +2,5 @@
 # Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/GoogleSheet/FileContentIndex/101addc5-10d8-4dcb-a729-6e2a9caf1193.vsidx
+/*.vsidx
+/.vs/GoogleSheet/FileContentIndex/cc0650c9-e357-43cc-bb3e-227133ccc129.vsidx
