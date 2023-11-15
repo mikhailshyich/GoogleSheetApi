@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shiich\\Desktop\\MyProject\\c#\\GoogleSheet\\GoogleSheet.csproj": {}
+    "D:\\CodingRepo\\GoogleSheetApi\\GoogleSheet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shiich\\Desktop\\MyProject\\c#\\GoogleSheet\\GoogleSheet.csproj": {
+    "D:\\CodingRepo\\GoogleSheetApi\\GoogleSheet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shiich\\Desktop\\MyProject\\c#\\GoogleSheet\\GoogleSheet.csproj",
+        "projectUniqueName": "D:\\CodingRepo\\GoogleSheetApi\\GoogleSheet.csproj",
         "projectName": "GoogleSheet",
-        "projectPath": "C:\\Users\\shiich\\Desktop\\MyProject\\c#\\GoogleSheet\\GoogleSheet.csproj",
-        "packagesPath": "C:\\Users\\shiich\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shiich\\Desktop\\MyProject\\c#\\GoogleSheet\\obj\\",
+        "projectPath": "D:\\CodingRepo\\GoogleSheetApi\\GoogleSheet.csproj",
+        "packagesPath": "C:\\Users\\vengura\\.nuget\\packages\\",
+        "outputPath": "D:\\CodingRepo\\GoogleSheetApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\shiich\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vengura\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
