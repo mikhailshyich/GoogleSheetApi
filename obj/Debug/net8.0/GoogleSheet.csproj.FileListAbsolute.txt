@@ -65,3 +65,4 @@ D:\CodingRepo\GoogleSheetApi\obj\Debug\net8.0\refint\GoogleSheet.dll
 D:\CodingRepo\GoogleSheetApi\obj\Debug\net8.0\GoogleSheet.pdb
 D:\CodingRepo\GoogleSheetApi\obj\Debug\net8.0\GoogleSheet.genruntimeconfig.cache
 D:\CodingRepo\GoogleSheetApi\obj\Debug\net8.0\ref\GoogleSheet.dll
+D:\CodingRepo\GoogleSheetApi\bin\Debug\net8.0\S7.Net.dll

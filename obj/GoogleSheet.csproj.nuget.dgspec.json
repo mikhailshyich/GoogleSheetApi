@@ -60,6 +60,10 @@
             "Google.Apis.Sheets.v4": {
               "target": "Package",
               "version": "[1.64.0.3148, )"
+            },
+            "S7netplus": {
+              "target": "Package",
+              "version": "[0.20.0, )"
             }
           },
           "imports": [
