@@ -38,3 +38,4 @@ C:\Users\shiich\Desktop\MyProject\c#\GoogleSheet\obj\Debug\net8.0\GoogleSheet.pd
 C:\Users\shiich\Desktop\MyProject\c#\GoogleSheet\obj\Debug\net8.0\GoogleSheet.genruntimeconfig.cache
 C:\Users\shiich\Desktop\MyProject\c#\GoogleSheet\obj\Debug\net8.0\ref\GoogleSheet.dll
 C:\Users\shiich\Desktop\MyProject\c#\GoogleSheet\bin\Debug\net8.0\Google.Apis.Sheets.v4.dll
+C:\Users\shiich\Desktop\MyProject\c#\GoogleSheet\obj\Debug\net8.0\GoogleSheet.sourcelink.json

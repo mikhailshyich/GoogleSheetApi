@@ -13,12 +13,14 @@ namespace GoogleSheet
     class Program
     {
         static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets }; /*Для доступа только к таблицам*/
-        static readonly string ApplicationName = "GoogleSheets"; /*Название приложения*/
-        static readonly string SpreadsheetId = "1PWxv4H1p-z-LR21uULmE0SJ6EG-WLFmJteXieF6drtg"; /*Идентификатор таблицы*/
-        static readonly string sheet = "List"; /*Название листа с которым работаем*/
         static SheetsService service;
 
         static void Main(string[] args)
+        {
+            GetUserData();
+            MainMenu();
+        }
+        static void GetUserData()
         {
             GoogleCredential credential; /*Получаем доступ к учётным данным*/
             using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
@@ -28,11 +30,8 @@ namespace GoogleSheet
 
             service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
             {
-                HttpClientInitializer = credential,
-                ApplicationName = ApplicationName,
+                HttpClientInitializer = credential
             });
-
-            MainMenu();
         }
 
         public static void MainMenu()
@@ -56,9 +55,13 @@ namespace GoogleSheet
 
         public static void CreateEntry() /*Метод добавления строки в таблицу*/
         {
-            var range = $"{sheet}!A:Z";
+            GoogleSheet sh = new GoogleSheet();
+            Console.Write("Введите название листа в таблице: ");
+            sh.sheet = Console.ReadLine();
+            sh.SpreadsheetId = "1PWxv4H1p-z-LR21uULmE0SJ6EG-WLFmJteXieF6drtg";
+            sh.objectList = new List<object>() { };
+            sh.range = $"{sh.sheet}!A:Z";
             var valueRange = new ValueRange();
-            var objectList = new List<object>() { }; /*Список значений*/
 
             Console.WriteLine("Выбран пункт меню 'Добавить строку в таблицу'");
             Console.WriteLine("Ввести значение д / н ? Вернуться в главное меню - 0");
@@ -70,7 +73,7 @@ namespace GoogleSheet
                 {
                     Console.WriteLine("Значение строки:");
                     string text = Console.ReadLine();
-                    objectList.Add($"{text}");
+                    sh.objectList.Add($"{text}");
                     Console.WriteLine($"Вы добавили - {text}");
                     Console.WriteLine("Продолжаем д / н ?");
                     answer = Console.ReadLine();
@@ -87,9 +90,9 @@ namespace GoogleSheet
             }
                 
             
-            valueRange.Values = new List<IList<object>> { objectList };
+            valueRange.Values = new List<IList<object>> { sh.objectList };
 
-            var appendRequest = service.Spreadsheets.Values.Append(valueRange, SpreadsheetId, range);
+            var appendRequest = service.Spreadsheets.Values.Append(valueRange, sh.SpreadsheetId, sh.range);
             appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
             var appendResponse = appendRequest.Execute();
 
