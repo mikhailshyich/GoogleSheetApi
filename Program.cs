@@ -12,37 +12,24 @@ namespace GoogleSheet
     //сслыка на GoogleSheet - https://docs.google.com/spreadsheets/d/1PWxv4H1p-z-LR21uULmE0SJ6EG-WLFmJteXieF6drtg/edit#gid=0
     class Program
     {
-        static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets }; /*Для доступа только к таблицам*/
-        static SheetsService service;
-
         static void Main(string[] args)
         {
-            GetUserData();
             MainMenu();
-        }
-        static void GetUserData()
-        {
-            GoogleCredential credential; /*Получаем доступ к учётным данным*/
-            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
-            {
-                credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
-            }
-
-            service = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential
-            });
         }
 
         public static void MainMenu()
         {
-            Console.WriteLine("Меню программы (выберите нужную цифру):\n1. Добавить строку в таблицу.\n2. Выход.");
+            Console.WriteLine("Меню программы (выберите нужную цифру):\n1. Добавить строку в таблицу.\n2. Создать новый лист в таблице.\n3. Выход.");
             string user_answer = Console.ReadLine();
             if (user_answer == "1")
             {
                 CreateEntry();
             }
             else if (user_answer == "2")
+            {
+                CreateSheet();
+            }
+            else if (user_answer == "3")
             {
                 Process.GetCurrentProcess().Kill();
             }
@@ -55,10 +42,9 @@ namespace GoogleSheet
 
         public static void CreateEntry() /*Метод добавления строки в таблицу*/
         {
-            GoogleSheet sh = new GoogleSheet();
+            GoogleTable sh = new GoogleTable();
             Console.Write("Введите название листа в таблице: ");
             sh.sheet = Console.ReadLine();
-            sh.SpreadsheetId = "1PWxv4H1p-z-LR21uULmE0SJ6EG-WLFmJteXieF6drtg";
             sh.objectList = new List<object>() { };
             sh.range = $"{sh.sheet}!A:Z";
             var valueRange = new ValueRange();
@@ -91,12 +77,34 @@ namespace GoogleSheet
                 
             
             valueRange.Values = new List<IList<object>> { sh.objectList };
-
-            var appendRequest = service.Spreadsheets.Values.Append(valueRange, sh.SpreadsheetId, sh.range);
+            var appendRequest = sh.service.Spreadsheets.Values.Append(valueRange, sh.SpreadsheetId, sh.range);
             appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
             var appendResponse = appendRequest.Execute();
 
             Console.WriteLine("Запись добавлена");
+            MainMenu();
+        }
+
+        public static void CreateSheet()
+        {
+            GoogleTable sh = new GoogleTable();
+            Console.Write("Введите название нового листа - ");
+            string sheetName = Console.ReadLine();
+            var addSheetRequest = new AddSheetRequest();
+            addSheetRequest.Properties = new SheetProperties();
+            addSheetRequest.Properties.Title = sheetName;
+            BatchUpdateSpreadsheetRequest batchUpdateSpreadsheetRequest = new BatchUpdateSpreadsheetRequest();
+            batchUpdateSpreadsheetRequest.Requests = new List<Request>();
+            batchUpdateSpreadsheetRequest.Requests.Add(new Request
+            {
+                AddSheet = addSheetRequest
+            });
+
+            var batchUpdateRequest = sh.service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, sh.SpreadsheetId);
+
+            batchUpdateRequest.Execute();
+
+            Console.WriteLine($"Создан новый лист - {sheetName}");
             MainMenu();
         }
 

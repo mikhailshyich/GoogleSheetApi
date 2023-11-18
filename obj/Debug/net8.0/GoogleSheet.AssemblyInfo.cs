@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoogleSheet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbd0fcf7087c42c1417114e21e971219047072fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdc53628d4bcfe2d994fd244d489ed4725e69a7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoogleSheet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoogleSheet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
