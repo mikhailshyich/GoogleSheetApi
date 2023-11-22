@@ -15,7 +15,7 @@ namespace GoogleSheet
         readonly string ApplicationName = "GoogleSheets"; /*Название приложения*/
         readonly string SpreadsheetId;/*Идентификатор таблицы*/
         readonly string sheet; /*Название листа с которым работаем*/
-        SheetsService service;
+        readonly SheetsService service;
         public GoogleDataSender(string SpreadsheetId, string sheet)
         {
             this.SpreadsheetId = SpreadsheetId;
