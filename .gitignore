@@ -10,6 +10,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+
 # User-specific files
 *.rsuser
 *.suo
@@ -403,4 +404,3 @@ FodyWeavers.xsd
 *.sln.iml
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
-
