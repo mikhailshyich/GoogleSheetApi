@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoogleSheet")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ba5b8182a650b2e5d52e333d366feb0fcbc91e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoogleSheet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoogleSheet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
