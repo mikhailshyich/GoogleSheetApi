@@ -73,7 +73,7 @@ namespace GoogleSheet
 
 
 
-
+            //
             //1 столбец - время
             //plcData.Add($"{e.SignalTime.Hour}:{e.SignalTime.Minute}:{e.SignalTime.Second}");
             plcData.Add($"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
